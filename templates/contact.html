@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us | Hamdrill Agri{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <span class="section-tag">Get In Touch</span>
+    <h1>Contact Us</h1>
+    <p>Send a message or reach us directly — we reply as soon as possible.</p>
+</section>
+
+<section class="section section-glass">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info scroll-reveal">
+                <img
+                    src="{{ url_for('static', filename='images/logo.png') }}"
+                    onerror="this.onerror=null; this.src='{{ url_for('static', filename='images/logo.svg') }}';"
+                    alt="Hamdrill Enterprises"
+                    class="contact-logo"
+                >
+                <span class="section-tag">Head Office</span>
+                <h2 style="margin-bottom: 20px;">Hamdrill Enterprises</h2>
+                <ul class="contact-info-card">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>203 Josiah Chinamano Avenue<br>Harare, Zimbabwe</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+263 (242) 705863</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>{{ contact_email }}</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <span>
+                            <a href="{{ whatsapp_url }}" target="_blank" rel="noopener" class="whatsapp-link">
+                                {{ whatsapp_display }} — Chat on WhatsApp
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+                <p style="margin-top: 24px; color: var(--text-muted); font-size: 0.92rem;">
+                    <strong>Farms:</strong> Spring Glory (Mutare area) · Gwebiwood (Harare area)
+                </p>
+            </div>
+
+            <form
+                class="contact-form scroll-reveal"
+                action="{{ formspree_action }}"
+                method="POST"
+            >
+                <span class="section-tag">Enquiry Form</span>
+                <h2 style="margin-bottom: 8px;">Send a Message</h2>
+                {% if not formspree_configured %}
+                <p class="form-setup-notice" role="status">
+                    Contact form is not live yet: set <code>FORMSPREE_ACTION</code> in <code>.env</code> (local) or in your host’s environment variables (production).
+                </p>
+                {% else %}
+                <p style="color: var(--text-muted); margin-bottom: 24px;">We will reply to your enquiry as soon as possible.</p>
+                {% endif %}
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="you@example.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone (optional)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+263 ...">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a topic</option>
+                        <option value="General Enquiry">General Enquiry</option>
+                        <option value="Poultry">Poultry</option>
+                        <option value="Horticulture">Horticulture</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="Farm Visit">Farm Visit</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="How can we help?"></textarea>
+                </div>
+
+                <input type="hidden" name="_subject" value="New enquiry from Hamdrill website">
+
+                <button type="submit" class="btn btn-primary"{% if not formspree_configured %} disabled aria-disabled="true"{% endif %}>
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+
+                <p style="margin-top: 16px; font-size: 0.88rem; color: var(--text-muted);">
+                    Prefer WhatsApp?
+                    <a href="{{ whatsapp_url }}" target="_blank" rel="noopener" class="whatsapp-link">Open chat</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Operations | Hamdrill Agri{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <span class="section-tag">What We Do</span>
+    <h1>Our Operations</h1>
+    <p>Poultry and horticulture — integrated across two farm sites in Zimbabwe.</p>
+</section>
+
+<section class="section" id="poultry">
+    <div class="container">
+        <div class="sustain-row scroll-reveal">
+            <div class="sustain-image">
+                <img src="{{ url_for('static', filename='images/operations/poultry.jpg') }}" alt="Broiler chickens in a commercial poultry house at Hamdrill">
+            </div>
+            <div class="sustain-text">
+                <span class="section-tag">Poultry</span>
+                <h3>Poultry Farming</h3>
+                <p>
+                    Hamdrill's poultry operations focus on efficient, quality production of eggs and poultry
+                    products for the Zimbabwean market. Our systems prioritize animal welfare, biosecurity,
+                    and consistent supply to retail and wholesale partners.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt" id="horticulture">
+    <div class="container">
+        <div class="sustain-row reverse scroll-reveal">
+            <div class="sustain-image">
+                <img src="{{ url_for('static', filename='images/operations/horticulture.jpg') }}" alt="Green crop rows in a field at sunrise">
+            </div>
+            <div class="sustain-text">
+                <span class="section-tag">Horticulture</span>
+                <h3>Horticulture</h3>
+                <p>
+                    From open-field crops to climate-controlled greenhouses, we grow fresh fruits and vegetables
+                    year-round. Precise irrigation and greenhouse technology help maximize yield while reducing
+                    water use.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

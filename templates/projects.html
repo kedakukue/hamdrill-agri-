@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Projects | Hamdrill Agri{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <span class="section-tag">Infrastructure</span>
+    <h1>Our Projects</h1>
+    <p>
+        Efficient production of quality, nutritious produce and meats — with smart irrigation,
+        energy use, and new crops for local and international markets.
+    </p>
+</section>
+
+<section class="section section-glass">
+    <div class="container">
+        <article class="project-card scroll-reveal">
+            <div class="project-visual">
+                <img src="{{ url_for('static', filename='images/projects/irrigation.jpg') }}" alt="Irrigation sprinkler watering crops in the field">
+            </div>
+            <div>
+                <span class="section-tag">Infrastructure</span>
+                <h2>Water Storage &amp; Irrigation</h2>
+                <h3 style="font-size:1.1rem; color: var(--green-mid); margin-bottom: 12px;">Optimizing Water Usage</h3>
+                <p>
+                    We have prioritized responsible resource management with efficient irrigation systems,
+                    storage dams, and energy-saving water distribution on both Spring Glory and Gwebiwood farms.
+                </p>
+            </div>
+        </article>
+
+        <article class="project-card scroll-reveal">
+            <div class="project-visual">
+                <img src="{{ url_for('static', filename='images/projects/greenhouse.jpg') }}" alt="Rows of leafy crops growing inside a greenhouse">
+            </div>
+            <div>
+                <span class="section-tag">Infrastructure</span>
+                <h2>Greenhouses</h2>
+                <h3 style="font-size:1.1rem; color: var(--green-mid); margin-bottom: 12px;">Horticulture Optimization</h3>
+                <p>
+                    Precise climate control allows year-round production, maximizing yield and quality of fresh
+                    produce. This reduces water usage and extends growing seasons for locally-sourced fruits
+                    and vegetables.
+                </p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="cta-band">
+    <h2>Interested in our produce or partnerships?</h2>
+    <p>Reach out to discuss supply, visits, or collaboration.</p>
+    <a href="{{ url_for('contact') }}" class="btn btn-white">Contact Us</a>
+</section>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Sustainability | Hamdrill Agri{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <span class="section-tag">Stewardship</span>
+    <h1>Water, Land &amp; Trees</h1>
+    <p>Sustainable practices across every hectare we manage.</p>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="sustain-row scroll-reveal">
+            <div class="sustain-image">
+                <img src="{{ url_for('static', filename='images/sustainability/water.jpg') }}" alt="Water flowing from irrigation pipe into the field">
+            </div>
+            <div class="sustain-text">
+                <span class="section-tag">Water</span>
+                <h3>Water Management</h3>
+                <p>
+                    Hamdrill Enterprises strives to produce more food using less water through efficient
+                    irrigation systems and water storage. Water is a scarce resource — we work with experts
+                    on the ground to optimize usage across all operations.
+                </p>
+            </div>
+        </div>
+
+        <div class="sustain-row reverse scroll-reveal">
+            <div class="sustain-image">
+                <img src="{{ url_for('static', filename='images/sustainability/land.jpg') }}" alt="Drip irrigation emitter watering young plants in the soil">
+            </div>
+            <div class="sustain-text">
+                <span class="section-tag">Land</span>
+                <h3>Land Prep &amp; Management</h3>
+                <p>
+                    Early and well-planned land preparation aids weed control in the field, which reduces
+                    herbicide usage while optimizing the land for higher yields. Our cattle herd is managed
+                    within the carrying capacity of the land.
+                </p>
+            </div>
+        </div>
+
+        <div class="sustain-row scroll-reveal">
+            <div class="sustain-image">
+                <img src="{{ url_for('static', filename='images/sustainability/trees.jpg') }}" alt="Cut logs and forestry equipment for responsible tree management">
+            </div>
+            <div class="sustain-text">
+                <span class="section-tag">Trees</span>
+                <h3>Tree Conservation</h3>
+                <p>
+                    We protect the environment by protecting trees — especially indigenous woods, which we
+                    have prohibited from being cut at our farms.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us | Hamdrill Agri{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <span class="section-tag">About Us</span>
+    <h1>Hamdrill Enterprises</h1>
+    <p>Family-owned agri-business rooted in Zimbabwe's Eastern Highlands and Mashonaland Central.</p>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <span class="section-tag">Who We Are</span>
+            <h2>Our Story</h2>
+            <p>
+                Hamdrill Enterprises is a family-owned and managed agri-business dedicated to efficient,
+                quality production of nutritious produce and meats for the Zimbabwean market and beyond.
+                We combine hands-on farm management with modern irrigation, greenhouse horticulture, and
+                responsible stewardship of water and land.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt section-glass">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <span class="section-tag">Where We Farm</span>
+            <h2>Our Locations</h2>
+            <p>Hamdrill Enterprises operates two farms in Zimbabwe.</p>
+        </div>
+        <div class="locations-grid">
+            <article class="location-card scroll-reveal">
+                <h3><i class="fas fa-map-marker-alt"></i> Gwebiwood Farm</h3>
+                <p>
+                    Nestled in Mashonaland Central province, 30km from Harare, Gwebiwood Farm sits at a
+                    relatively high altitude, offering pleasant year-round temperatures. Our newer site
+                    expands production capacity close to the capital.
+                </p>
+            </article>
+            <article class="location-card scroll-reveal">
+                <h3><i class="fas fa-map-marker-alt"></i> Spring Glory Farm</h3>
+                <p>
+                    Tucked away in the Eastern Highlands of Manicaland province, Spring Glory Farm is 20km
+                    outside Mutare city. This location boasts good water supply and enjoys a moderate climate
+                    with fair rainfall.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section section-glass">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <span class="section-tag">What Guides Us</span>
+            <h2>Our Values</h2>
+        </div>
+        <div class="values-grid scroll-reveal">
+            <div class="value-pill">Accountability</div>
+            <div class="value-pill">Recognition</div>
+            <div class="value-pill">Commitment</div>
+            <div class="value-pill">Team Work</div>
+            <div class="value-pill">Honesty</div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt section-glass" id="leadership">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <span class="section-tag">Leadership</span>
+            <h2>Our Directors</h2>
+            <p>The Matsaira family leads Hamdrill with a long-term commitment to agriculture and community.</p>
+        </div>
+        {% include '_directors.html' %}
+    </div>
+</section>
+
+<section class="section">
+    <div class="container" style="text-align: center;">
+        <div class="section-header scroll-reveal">
+            <span class="section-tag">What We Do</span>
+            <h2>Operations &amp; Projects</h2>
+            <p>Explore how we farm, innovate, and invest in sustainable infrastructure.</p>
+        </div>
+        <a href="{{ url_for('operations') }}" class="btn btn-primary">Our Operations</a>
+        <a href="{{ url_for('projects') }}" class="btn btn-outline" style="margin-left: 12px;">Our Projects</a>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | Hamdrill Agri{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-content scroll-reveal">
+            <p class="hero-tag">On the Farm</p>
+            <h1>Specializing in Poultry Farming and Horticulture</h1>
+            <p class="hero-lead">
+                Hamdrill Enterprises is a family-owned and managed agri-business with operations at two sites:
+                Spring Glory Farm in the Eastern Highlands of Zimbabwe, 20km from Mutare, and Gwebiwood Farm,
+                25km from Harare city center.
+            </p>
+            <div class="hero-actions">
+                <a href="{{ url_for('operations') }}" class="btn btn-primary">Our Operations</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-visual scroll-reveal">
+            <img
+                src="{{ url_for('static', filename='images/hero-farm.jpg') }}"
+                alt="Crop rows in the field at Hamdrill farm"
+                class="hero-visual-img"
+                width="800"
+                height="600"
+                loading="eager"
+            >
+        </div>
+    </div>
+</section>
+
+<section class="section section-glass">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <span class="section-tag">What We Do</span>
+            <h2>Our Operations</h2>
+            <p>Poultry and horticulture across two farm sites — serving Zimbabwe and beyond.</p>
+        </div>
+        <div class="cards-grid">
+            <a href="{{ url_for('operations') }}#poultry" class="op-card scroll-reveal">
+                <i class="fas fa-egg"></i>
+                <h3>Poultry</h3>
+                <p>Quality eggs and poultry products for local markets.</p>
+            </a>
+            <a href="{{ url_for('operations') }}#horticulture" class="op-card scroll-reveal">
+                <i class="fas fa-seedling"></i>
+                <h3>Horticulture</h3>
+                <p>Fresh produce with greenhouse and open-field growing.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <span class="section-tag">Our Farms</span>
+            <h2>Two Sites, One Mission</h2>
+            <p>
+                Spring Glory Farm in the Eastern Highlands (20km from Mutare) and Gwebiwood Farm near Harare
+                (25km from the city center) anchor our production — from poultry and horticulture to sustainable
+                land stewardship.
+            </p>
+        </div>
+        <p style="text-align: center;">
+            <a href="{{ url_for('about') }}" class="btn btn-outline">About Our Locations</a>
+        </p>
+    </div>
+</section>
+
+<section class="section section-glass">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <span class="section-tag">What Guides Us</span>
+            <h2>Our Values</h2>
+        </div>
+        <div class="values-grid scroll-reveal">
+            <div class="value-pill">Accountability</div>
+            <div class="value-pill">Recognition</div>
+            <div class="value-pill">Commitment</div>
+            <div class="value-pill">Team Work</div>
+            <div class="value-pill">Honesty</div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt section-glass">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <span class="section-tag">Infrastructure</span>
+            <h2>Our Projects</h2>
+            <p>
+                We are committed to efficient production of quality and nutritious produce and meats for
+                Zimbabwe and beyond — from irrigation to energy-efficient growing.
+            </p>
+        </div>
+        <div class="cards-grid">
+            <div class="op-card scroll-reveal">
+                <i class="fas fa-water"></i>
+                <h3>Water &amp; Irrigation</h3>
+                <p>Storage dams and efficient distribution across both farms.</p>
+            </div>
+            <div class="op-card scroll-reveal">
+                <i class="fas fa-warehouse"></i>
+                <h3>Greenhouses</h3>
+                <p>Year-round horticulture with precise climate control.</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 32px;">
+            <a href="{{ url_for('projects') }}" class="btn btn-primary">View All Projects</a>
+        </p>
+    </div>
+</section>
+
+<section class="section section-glass">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <span class="section-tag">Leadership</span>
+            <h2>Our Leadership</h2>
+        </div>
+        {% include '_directors.html' %}
+    </div>
+</section>
+
+<section class="cta-band">
+    <h2>Get in touch with any questions</h2>
+    <p>203 Josiah Chinamano Avenue, Harare — or message us on WhatsApp.</p>
+    <a href="{{ url_for('contact') }}" class="btn btn-white">Contact Us</a>
+</section>
+
+{% endblock %}

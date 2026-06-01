@@ -1,0 +1,25 @@
+# Free deploy: push repo to GitHub → https://render.com → New Web Service → Connect repo
+# Render reads this file automatically ("Blueprint" deploy).
+
+services:
+  - type: web
+    name: hamdrill-agri
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: FLASK_DEBUG
+        value: "0"
+      - key: FORMSPREE_ACTION
+        sync: false
+      - key: WHATSAPP_NUMBER
+        value: "263242705863"
+      - key: WHATSAPP_DISPLAY
+        value: "+263 (242) 705863"
+      - key: CONTACT_EMAIL
+        value: administration@hondehgroup.com

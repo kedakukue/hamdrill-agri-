@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}Hamdrill Enterprises — poultry, horticulture, and sustainable agriculture in Zimbabwe.{% endblock %}">
+    <title>{% block title %}Hamdrill Agri{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/logo.png') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="nav-logo">
+                <span class="nav-logo-bg">
+                    <img
+                        src="{{ url_for('static', filename='images/logo.png') }}"
+                        onerror="this.onerror=null; this.src='{{ url_for('static', filename='images/logo.svg') }}';"
+                        alt="Hamdrill Enterprises"
+                        class="nav-logo-img"
+                    >
+                </span>
+            </a>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                <li><a href="{{ url_for('operations') }}" class="nav-link">Operations</a></li>
+                <li><a href="{{ url_for('projects') }}" class="nav-link">Projects</a></li>
+                <li><a href="{{ url_for('sustainability') }}" class="nav-link">Sustainability</a></li>
+                <li><a href="{{ url_for('contact') }}" class="nav-link nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="{{ url_for('static', filename='images/logo.png') }}"
+                        onerror="this.onerror=null; this.src='{{ url_for('static', filename='images/logo.svg') }}';" alt="Hamdrill" class="footer-logo">
+                <p>Family-owned agri-business specializing in poultry, horticulture, and sustainable farming at Spring Glory and Gwebiwood farms, Zimbabwe.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('operations') }}">Operations</a></li>
+                    <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                    <li><a href="{{ url_for('sustainability') }}">Sustainability</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 203 Josiah Chinamano Avenue, Harare</li>
+                    <li><i class="fas fa-phone"></i> +263 (242) 705863</li>
+                    <li><i class="fas fa-envelope"></i> {{ contact_email }}</li>
+                    <li>
+                        <a href="{{ whatsapp_url }}" target="_blank" rel="noopener" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {{ 2026 }} Hamdrill Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="{{ whatsapp_url }}" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
